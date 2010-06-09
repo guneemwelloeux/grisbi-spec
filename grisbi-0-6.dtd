@@ -1,0 +1,375 @@
+<!ELEMENT Grisbi ( General, Color?, Print?, Currency+, Account+,
+( Category | Sub_category | Party | Payment | Transaction | Reconcile | Scheduled | Currency_link | Budgetary | Bank | Report | Text_comparison | Amount_comparison )* ,Logo? ) >
+
+<!ELEMENT General EMPTY >
+<!ATTLIST General Add_archive_in_total_balance NMTOKEN #REQUIRED >
+<!ATTLIST General Archive_file NMTOKEN #REQUIRED >
+<!ATTLIST General Automatic_amount_separator NMTOKEN #REQUIRED >
+<!ATTLIST General Budget_list_currency_number NMTOKEN #REQUIRED >
+<!ATTLIST General CSV_separator CDATA #REQUIRED >
+<!ATTLIST General CSV_skipped_lines NMTOKEN #REQUIRED >
+<!ATTLIST General Category_list_currency_number NMTOKEN #REQUIRED >
+<!ATTLIST General Combofix_case_sensitive NMTOKEN #REQUIRED >
+<!ATTLIST General Combofix_enter_select_completion (0|1) #IMPLIED >
+<!ATTLIST General Combofix_force_category NMTOKEN #REQUIRED >
+<!ATTLIST General Combofix_force_payee NMTOKEN #REQUIRED >
+<!ATTLIST General Combofix_max_item NMTOKEN #REQUIRED >
+<!ATTLIST General Combofix_mixed_sort NMTOKEN #REQUIRED >
+<!ATTLIST General Crypt_file NMTOKEN #REQUIRED >
+<!ATTLIST General File_title CDATA #REQUIRED >
+<!ATTLIST General File_version NMTOKEN #REQUIRED >
+<!ATTLIST General General_address CDATA #REQUIRED >
+<!ATTLIST General Grisbi_version CDATA #REQUIRED >
+<!ATTLIST General Import_categorie_for_payee NMTOKEN #REQUIRED >
+<!ATTLIST General Import_extract_number_for_check NMTOKEN #REQUIRED >
+<!ATTLIST General Import_fusion_transactions NMTOKEN #REQUIRED >
+<!ATTLIST General Import_fyear_by_value_date NMTOKEN #REQUIRED >
+<!ATTLIST General Import_interval_search NMTOKEN #REQUIRED >
+<!ATTLIST General Metatree_sort_transactions NMTOKEN #REQUIRED >
+<!ATTLIST General One_line_showed NMTOKEN #REQUIRED >
+<!ATTLIST General Party_list_currency_number NMTOKEN #REQUIRED >
+<!ATTLIST General Remind_display_per_account NMTOKEN #REQUIRED >
+<!ATTLIST General Remind_form_per_account NMTOKEN #REQUIRED >
+<!ATTLIST General Scheduler_column_width NMTOKEN #REQUIRED >
+<!ATTLIST General Scheduler_custom_menu NMTOKEN #REQUIRED >
+<!ATTLIST General Scheduler_custom_number NMTOKEN #REQUIRED >
+<!ATTLIST General Scheduler_view NMTOKEN #REQUIRED >
+<!ATTLIST General Second_general_address CDATA #REQUIRED >
+<!ATTLIST General Three_lines_showed NMTOKEN #REQUIRED >
+<!ATTLIST General Transaction_column_width NMTOKEN #REQUIRED >
+<!ATTLIST General Transactions_view NMTOKEN #REQUIRED >
+<!ATTLIST General Two_lines_showed (0|1) #REQUIRED >
+<!ATTLIST General Use_logo (0|1) #REQUIRED >
+
+
+<!ELEMENT Logo EMPTY >
+<!ATTLIST Logo Image CDATA #REQUIRED >
+
+<!ELEMENT Color EMPTY >
+<!ATTLIST Color Background_archive_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_archive_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_archive_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_0_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_0_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_0_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_1_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_1_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_color_1_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_scheduled_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_scheduled_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_scheduled_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_split_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_split_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Background_split_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Calendar_entry_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Calendar_entry_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Calendar_entry_red NMTOKEN #REQUIRED >
+
+<!ATTLIST Color Couleur_bet_division_blue NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_division_green NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_division_red NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_future_blue NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_future_green NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_future_red NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_transfert_blue NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_transfert_green NMTOKEN #IMPLIED >
+<!ATTLIST Color Couleur_bet_transfert_red NMTOKEN #IMPLIED >
+
+<!ATTLIST Color Couleur_jour_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Couleur_jour_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Couleur_jour_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Selection_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Selection_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Selection_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_0_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_0_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_0_red NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_1_blue NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_1_green NMTOKEN #REQUIRED >
+<!ATTLIST Color Text_color_1_red NMTOKEN #REQUIRED >
+
+<!ELEMENT Print EMPTY >
+<!ATTLIST Print Draw_archives (0|1) #REQUIRED >
+<!ATTLIST Print Draw_background (0|1) #REQUIRED >
+<!ATTLIST Print Draw_column (0|1) #REQUIRED >
+<!ATTLIST Print Draw_columns_name (0|1) #REQUIRED >
+<!ATTLIST Print Draw_dates_are_value_dates (0|1) #REQUIRED >
+<!ATTLIST Print Draw_interval_dates (0|1) #REQUIRED >
+<!ATTLIST Print Draw_lines (0|1) #REQUIRED >
+<!ATTLIST Print Draw_title (0|1) #REQUIRED >
+<!ATTLIST Print Font_title CDATA #REQUIRED >
+<!ATTLIST Print Font_transactions CDATA #REQUIRED >
+<!ATTLIST Print Report_font_title CDATA #REQUIRED >
+<!ATTLIST Print Report_font_transactions CDATA #REQUIRED >
+
+<!ELEMENT Account EMPTY >
+<!ATTLIST Account Ascending_sort NMTOKEN #REQUIRED >
+<!ATTLIST Account Bank NMTOKEN #REQUIRED >
+<!ATTLIST Account Bank_account_IBAN CDATA #REQUIRED >
+<!ATTLIST Account Bank_account_number CDATA #REQUIRED >
+<!ATTLIST Account Bank_branch_code CDATA #REQUIRED >
+<!ATTLIST Account Bet_Fi NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_SD NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_UT NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_auto_inc_month (0|1) #IMPLIED >
+<!ATTLIST Account Bet_months NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_select_futur_label NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_select_scheduled_label NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_select_transaction_label NMTOKEN #IMPLIED >
+<!ATTLIST Account Bet_start_date CDATA #IMPLIED >
+<!ATTLIST Account Bet_use_budget (0|1) #IMPLIED >
+<!ATTLIST Account Closed_account (0|1) #REQUIRED >
+<!ATTLIST Account Column_sort (0|1) #REQUIRED >
+<!ATTLIST Account Comment CDATA #REQUIRED >
+<!ATTLIST Account Currency NMTOKEN #REQUIRED >
+<!ATTLIST Account Default_credit_method NMTOKEN #REQUIRED >
+<!ATTLIST Account Default_debit_method NMTOKEN #REQUIRED >
+<!ATTLIST Account Form_columns_number NMTOKEN #REQUIRED >
+<!ATTLIST Account Form_columns_width NMTOKEN #REQUIRED >
+<!ATTLIST Account Form_lines_number NMTOKEN #REQUIRED >
+<!ATTLIST Account Form_organization NMTOKEN #REQUIRED >
+<!ATTLIST Account Id CDATA #REQUIRED >
+<!ATTLIST Account Initial_balance NMTOKEN #REQUIRED >
+<!ATTLIST Account Key CDATA #REQUIRED >
+<!ATTLIST Account Kind NMTOKEN #REQUIRED >
+<!ATTLIST Account Lines_per_transaction NMTOKEN #REQUIRED >
+<!ATTLIST Account Minimum_authorised_balance NMTOKEN #REQUIRED >
+<!ATTLIST Account Minimum_wanted_balance NMTOKEN #REQUIRED >
+<!ATTLIST Account Name CDATA #REQUIRED >
+<!ATTLIST Account Neutrals_inside_method NMTOKEN #REQUIRED >
+<!ATTLIST Account Number NMTOKEN #REQUIRED >
+<!ATTLIST Account Owner CDATA #REQUIRED >
+<!ATTLIST Account Owner_address CDATA #REQUIRED >
+<!ATTLIST Account Path_icon CDATA #REQUIRED >
+<!ATTLIST Account Show_archives_lines (0|1) #IMPLIED >
+<!ATTLIST Account Show_marked (0|1) #REQUIRED >
+<!ATTLIST Account Sort_by_method (0|1) #REQUIRED >
+<!ATTLIST Account Sort_order CDATA #REQUIRED >
+<!ATTLIST Account Sorting_kind_column NMTOKEN #REQUIRED >
+
+<!ELEMENT Currency EMPTY >
+<!ATTLIST Currency Co CDATA #REQUIRED >
+<!ATTLIST Currency Fl NMTOKEN #REQUIRED >
+<!ATTLIST Currency Ico CDATA #REQUIRED >
+<!ATTLIST Currency Na CDATA #REQUIRED >
+<!ATTLIST Currency Nb NMTOKEN #REQUIRED >
+
+<!ELEMENT Category EMPTY >
+<!ATTLIST Category Kd ( 0 | 1 ) #REQUIRED >
+<!ATTLIST Category Na CDATA #REQUIRED >
+<!ATTLIST Category Nb NMTOKEN #REQUIRED >
+
+<!ELEMENT Sub_category EMPTY >
+<!ATTLIST Sub_category Na CDATA #REQUIRED >
+<!ATTLIST Sub_category Nb NMTOKEN #REQUIRED >
+<!ATTLIST Sub_category Nbc NMTOKEN #REQUIRED >
+
+<!ELEMENT Party EMPTY >
+<!ATTLIST Party Na CDATA #REQUIRED >
+<!ATTLIST Party Nb NMTOKEN #REQUIRED >
+<!ATTLIST Party Search CDATA #REQUIRED >
+<!ATTLIST Party Txt CDATA #REQUIRED >
+
+<!ELEMENT Payment EMPTY >
+<!ATTLIST Payment Account NMTOKEN #REQUIRED >
+<!ATTLIST Payment Automatic_number (0|1) #REQUIRED >
+<!ATTLIST Payment Current_number NMTOKEN #REQUIRED >
+<!ATTLIST Payment Name CDATA #REQUIRED >
+<!ATTLIST Payment Number NMTOKEN #REQUIRED >
+<!ATTLIST Payment Show_entry (0|1) #REQUIRED >
+<!ATTLIST Payment Sign (0|1|2) #REQUIRED >
+
+<!ELEMENT Transaction EMPTY >
+<!ATTLIST Transaction Ac NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Am NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Ar NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Au NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Ba CDATA #REQUIRED >
+<!ATTLIST Transaction Br NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Bu NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Ca NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Cu NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Dt CDATA #REQUIRED >
+<!ATTLIST Transaction Dv CDATA #REQUIRED >
+<!ATTLIST Transaction Exb NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Exf NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Exr NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Fi NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Id CDATA #REQUIRED >
+<!ATTLIST Transaction Ma NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Mo NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Nb NMTOKEN #REQUIRED >
+<!ATTLIST Transaction No CDATA #REQUIRED >
+<!ATTLIST Transaction Pa NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Pc CDATA #REQUIRED >
+<!ATTLIST Transaction Pn NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Re NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Sbu NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Sca NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Trt NMTOKEN #REQUIRED >
+<!ATTLIST Transaction Vo CDATA #REQUIRED >
+
+<!ELEMENT Scheduled EMPTY >
+<!ATTLIST Scheduled Ac NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Am NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Au NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Br NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Bu NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled CPn NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Ca NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Cu NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Dt CDATA #REQUIRED >
+<!ATTLIST Scheduled Dtl CDATA #REQUIRED >
+<!ATTLIST Scheduled Fi NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Mo NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Nb NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled No CDATA #REQUIRED >
+<!ATTLIST Scheduled Pa NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Pc CDATA #REQUIRED >
+<!ATTLIST Scheduled Pe NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Pei NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Pep NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Pn NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Sbu NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Sca NMTOKEN #REQUIRED >
+<!ATTLIST Scheduled Tra NMTOKEN #REQUIRED >
+
+
+<!ELEMENT Currency_link EMPTY >
+<!ATTLIST Currency_link Nb NMTOKEN #REQUIRED >
+<!ATTLIST Currency_link Cu1 NMTOKEN #REQUIRED >
+<!ATTLIST Currency_link Cu2 NMTOKEN #REQUIRED >
+<!ATTLIST Currency_link Ex CDATA #REQUIRED >
+<!ATTLIST Currency_link Modified_date CDATA #REQUIRED >
+
+<!ELEMENT Reconcile EMPTY >
+<!ATTLIST Reconcile Nb NMTOKEN #REQUIRED >
+<!ATTLIST Reconcile Na CDATA #REQUIRED >
+<!ATTLIST Reconcile Acc NMTOKEN #REQUIRED >
+<!ATTLIST Reconcile Idate CDATA #REQUIRED >
+<!ATTLIST Reconcile Fdate CDATA #REQUIRED >
+<!ATTLIST Reconcile Ibal NMTOKEN #REQUIRED >
+<!ATTLIST Reconcile Fbal NMTOKEN #REQUIRED>
+
+<!ELEMENT Budgetary EMPTY >
+<!ATTLIST Budgetary Nb NMTOKEN #REQUIRED >
+<!ATTLIST Budgetary Na CDATA #REQUIRED >
+<!ATTLIST Budgetary Kd NMTOKEN #REQUIRED >
+
+<!ELEMENT Bank EMPTY >
+<!ATTLIST Bank Adr CDATA #REQUIRED >
+<!ATTLIST Bank BIC CDATA #REQUIRED >
+<!ATTLIST Bank Co CDATA #REQUIRED >
+<!ATTLIST Bank Faxc CDATA #REQUIRED >
+<!ATTLIST Bank Mail CDATA #REQUIRED >
+<!ATTLIST Bank Mailc CDATA #REQUIRED >
+<!ATTLIST Bank Na CDATA #REQUIRED >
+<!ATTLIST Bank Nac CDATA #REQUIRED >
+<!ATTLIST Bank Nb NMTOKEN #REQUIRED >
+<!ATTLIST Bank Rem CDATA #REQUIRED >
+<!ATTLIST Bank Tel CDATA #REQUIRED >
+<!ATTLIST Bank Telc CDATA #REQUIRED >
+<!ATTLIST Bank Web CDATA #REQUIRED >
+
+<!ELEMENT Report EMPTY >
+<!ATTLIST Report Account_group_transactions NMTOKEN #REQUIRED >
+<!ATTLIST Report Account_selected CDATA #REQUIRED >
+<!ATTLIST Report Account_show_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Account_show_name NMTOKEN #REQUIRED >
+<!ATTLIST Report Account_use_selection NMTOKEN #REQUIRED >
+<!ATTLIST Report Amount_currency NMTOKEN #REQUIRED >
+<!ATTLIST Report Amount_exclude_null NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_currency NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_selected CDATA #REQUIRED >
+<!ATTLIST Report Budget_show_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_show_name NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_show_sub_budget NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_show_sub_budget_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_show_without_sub_budget NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_use NMTOKEN #REQUIRED >
+<!ATTLIST Report Budget_use_selection NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_currency NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_selected CDATA #REQUIRED >
+<!ATTLIST Report Categ_show_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_show_name NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_show_sub_categ NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_show_sub_categ_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_show_without_sub_categ NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_use NMTOKEN #REQUIRED >
+<!ATTLIST Report Categ_use_selection NMTOKEN #REQUIRED >
+<!ATTLIST Report Currency_general NMTOKEN #REQUIRED >
+<!ATTLIST Report Date_beginning CDATA #REQUIRED >
+<!ATTLIST Report Date_end CDATA #REQUIRED >
+<!ATTLIST Report Date_kind NMTOKEN #REQUIRED >
+<!ATTLIST Report Financial_year_kind NMTOKEN #REQUIRED >
+<!ATTLIST Report Financial_year_select CDATA #REQUIRED >
+<!ATTLIST Report Financial_year_used NMTOKEN #REQUIRED >
+<!ATTLIST Report General_sort_type CDATA #REQUIRED >
+<!ATTLIST Report Name CDATA #REQUIRED >
+<!ATTLIST Report Nb NMTOKEN #REQUIRED >
+<!ATTLIST Report Payee_currency NMTOKEN #REQUIRED >
+<!ATTLIST Report Payee_selected CDATA #REQUIRED >
+<!ATTLIST Report Payee_show_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Payee_show_name NMTOKEN #REQUIRED >
+<!ATTLIST Report Payee_use NMTOKEN #REQUIRED >
+<!ATTLIST Report Payee_use_selection NMTOKEN #REQUIRED >
+<!ATTLIST Report Payment_method_list CDATA #REQUIRED >
+<!ATTLIST Report Payment_method_use NMTOKEN #REQUIRED >
+<!ATTLIST Report Report_can_click NMTOKEN #REQUIRED >
+<!ATTLIST Report Report_in_payees NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_columns_titles NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_exclude_split_child NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_r NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_split_amounts NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_title_column_kind NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_bank NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_budget NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_categ NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_chq NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_date NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_fin_year NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_nb NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_note NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_payee NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_payment NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_reconcile NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_sort_type NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_sub_budget NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_sub_categ NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_value_date NMTOKEN #REQUIRED >
+<!ATTLIST Report Show_transaction_voucher NMTOKEN #REQUIRED >
+<!ATTLIST Report Split_by_date NMTOKEN #REQUIRED >
+<!ATTLIST Report Split_by_fin_year NMTOKEN #REQUIRED >
+<!ATTLIST Report Split_date_period NMTOKEN #REQUIRED >
+<!ATTLIST Report Split_day_beginning NMTOKEN #REQUIRED >
+<!ATTLIST Report Transfer_exclude_transactions NMTOKEN #REQUIRED >
+<!ATTLIST Report Transfer_kind NMTOKEN #REQUIRED >
+<!ATTLIST Report Transfer_selected_accounts CDATA #REQUIRED >
+<!ATTLIST Report Use_amount NMTOKEN #REQUIRED >
+<!ATTLIST Report Use_text NMTOKEN #REQUIRED >
+
+<!ELEMENT Text_comparison EMPTY >
+<!ATTLIST Text_comparison Amount_1 NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Amount_2 NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Comparison_1 NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Comparison_2 NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Comparison_number NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Last_comparison NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Link_1_2 NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Object NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Operator NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Report_nb NMTOKEN #REQUIRED >
+<!ATTLIST Text_comparison Text CDATA #REQUIRED >
+<!ATTLIST Text_comparison Use_text NMTOKEN #REQUIRED >
+
+<!ELEMENT Amount_comparison EMPTY >
+<!ATTLIST Amount_comparison Amount_1 NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Amount_2 NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Comparison_1 NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Comparison_2 NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Comparison_number NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Last_comparison NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Link_1_2 NMTOKEN #REQUIRED >
+<!ATTLIST Amount_comparison Report_nb NMTOKEN #REQUIRED >
