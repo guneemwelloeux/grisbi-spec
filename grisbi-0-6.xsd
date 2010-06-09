@@ -1,552 +1,623 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Grisbi">
-<xs:complexType>
-<xs:sequence>
-<xs:element ref="General"/>
-<xs:element minOccurs="0" ref="Color"/>
-<xs:element minOccurs="0" ref="Print"/>
-<xs:element maxOccurs="unbounded" ref="Currency"/>
-<xs:element maxOccurs="unbounded" ref="Account"/>
-<xs:choice maxOccurs="unbounded" minOccurs="0">
-<xs:element ref="Category"/>
-<xs:element ref="Sub_category"/>
-<xs:element ref="Party"/>
-<xs:element ref="Payment"/>
-<xs:element ref="Transaction"/>
-<xs:element ref="Reconcile"/>
-<xs:element ref="Scheduled"/>
-<xs:element ref="Currency_link"/>
-<xs:element ref="Budgetary"/>
-<xs:element ref="Bank"/>
-<xs:element ref="Report"/>
-<xs:element ref="Text_comparison"/>
-<xs:element ref="Amount_comparison"/>
-</xs:choice>
-<xs:element minOccurs="0" ref="Logo"/>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Add_archive_in_total_balance" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Archive_file" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Automatic_amount_separator" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_list_currency_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="CSV_separator" type="xs:string" use="required"/>
-<xs:attribute name="CSV_skipped_lines" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Category_list_currency_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Combofix_case_sensitive" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Combofix_enter_select_completion">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Combofix_force_category" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Combofix_force_payee" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Combofix_max_item" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Combofix_mixed_sort" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Crypt_file" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="File_title" type="xs:string" use="required"/>
-<xs:attribute name="File_version" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="General_address" type="xs:string" use="required"/>
-<xs:attribute name="Grisbi_version" type="xs:string" use="required"/>
-<xs:attribute name="Import_categorie_for_payee" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Import_extract_number_for_check" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Import_fusion_transactions" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Import_fyear_by_value_date" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Import_interval_search" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Metatree_sort_transactions" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="One_line_showed" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Party_list_currency_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Remind_display_per_account" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Remind_form_per_account" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Scheduler_column_width" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Scheduler_custom_menu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Scheduler_custom_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Scheduler_view" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Second_general_address" type="xs:string" use="required"/>
-<xs:attribute name="Three_lines_showed" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Transaction_column_width" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Transactions_view" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Two_lines_showed" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Use_logo" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Image" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Background_archive_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_archive_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_archive_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_0_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_0_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_0_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_1_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_1_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_color_1_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_scheduled_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_scheduled_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_scheduled_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_split_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_split_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Background_split_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Calendar_entry_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Calendar_entry_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Calendar_entry_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Couleur_bet_division_blue" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_division_green" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_division_red" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_future_blue" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_future_green" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_future_red" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_transfert_blue" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_transfert_green" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_bet_transfert_red" type="xs:NMTOKEN"/>
-<xs:attribute name="Couleur_jour_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Couleur_jour_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Couleur_jour_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Selection_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Selection_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Selection_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_0_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_0_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_0_red" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_1_blue" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_1_green" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text_color_1_red" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Draw_archives" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_background" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_column" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_columns_name" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_dates_are_value_dates" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_interval_dates" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_lines" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Draw_title" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Font_title" type="xs:string" use="required"/>
-<xs:attribute name="Font_transactions" type="xs:string" use="required"/>
-<xs:attribute name="Report_font_title" type="xs:string" use="required"/>
-<xs:attribute name="Report_font_transactions" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Ascending_sort" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Bank" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Bank_account_IBAN" type="xs:string" use="required"/>
-<xs:attribute name="Bank_account_number" type="xs:string" use="required"/>
-<xs:attribute name="Bank_branch_code" type="xs:string" use="required"/>
-<xs:attribute name="Bet_Fi" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_SD" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_UT" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_auto_inc_month">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Bet_months" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_select_futur_label" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_select_scheduled_label" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_select_transaction_label" type="xs:NMTOKEN"/>
-<xs:attribute name="Bet_start_date" type="xs:string"/>
-<xs:attribute name="Bet_use_budget">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Closed_account" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Column_sort" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Comment" type="xs:string" use="required"/>
-<xs:attribute name="Currency" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Default_credit_method" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Default_debit_method" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Form_columns_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Form_columns_width" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Form_lines_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Form_organization" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Id" type="xs:string" use="required"/>
-<xs:attribute name="Initial_balance" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Key" type="xs:string" use="required"/>
-<xs:attribute name="Kind" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Lines_per_transaction" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Minimum_authorised_balance" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Minimum_wanted_balance" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Name" type="xs:string" use="required"/>
-<xs:attribute name="Neutrals_inside_method" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Owner" type="xs:string" use="required"/>
-<xs:attribute name="Owner_address" type="xs:string" use="required"/>
-<xs:attribute name="Path_icon" type="xs:string" use="required"/>
-<xs:attribute name="Show_archives_lines">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Show_marked" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Sort_by_method" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Sort_order" type="xs:string" use="required"/>
-<xs:attribute name="Sorting_kind_column" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Co" type="xs:string" use="required"/>
-<xs:attribute name="Fl" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ico" type="xs:string" use="required"/>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Kd" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Nbc" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Search" type="xs:string" use="required"/>
-<xs:attribute name="Txt" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Account" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Automatic_number" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Current_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Name" type="xs:string" use="required"/>
-<xs:attribute name="Number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_entry" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-<xs:attribute name="Sign" use="required">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="0"/>
-<xs:enumeration value="1"/>
-<xs:enumeration value="2"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:attribute>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Ac" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Am" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ar" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Au" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ba" type="xs:string" use="required"/>
-<xs:attribute name="Br" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Bu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ca" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Cu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Dt" type="xs:string" use="required"/>
-<xs:attribute name="Dv" type="xs:string" use="required"/>
-<xs:attribute name="Exb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Exf" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Exr" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Fi" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Id" type="xs:string" use="required"/>
-<xs:attribute name="Ma" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Mo" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="No" type="xs:string" use="required"/>
-<xs:attribute name="Pa" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Pc" type="xs:string" use="required"/>
-<xs:attribute name="Pn" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Re" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Sbu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Sca" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Trt" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Vo" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Ac" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Am" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Au" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Br" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Bu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="CPn" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ca" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Cu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Dt" type="xs:string" use="required"/>
-<xs:attribute name="Dtl" type="xs:string" use="required"/>
-<xs:attribute name="Fi" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Mo" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="No" type="xs:string" use="required"/>
-<xs:attribute name="Pa" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Pc" type="xs:string" use="required"/>
-<xs:attribute name="Pe" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Pei" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Pep" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Pn" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Sbu" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Sca" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Tra" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Cu1" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Cu2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Ex" type="xs:string" use="required"/>
-<xs:attribute name="Modified_date" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Acc" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Idate" type="xs:string" use="required"/>
-<xs:attribute name="Fdate" type="xs:string" use="required"/>
-<xs:attribute name="Ibal" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Fbal" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Kd" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Adr" type="xs:string" use="required"/>
-<xs:attribute name="BIC" type="xs:string" use="required"/>
-<xs:attribute name="Co" type="xs:string" use="required"/>
-<xs:attribute name="Faxc" type="xs:string" use="required"/>
-<xs:attribute name="Mail" type="xs:string" use="required"/>
-<xs:attribute name="Mailc" type="xs:string" use="required"/>
-<xs:attribute name="Na" type="xs:string" use="required"/>
-<xs:attribute name="Nac" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Rem" type="xs:string" use="required"/>
-<xs:attribute name="Tel" type="xs:string" use="required"/>
-<xs:attribute name="Telc" type="xs:string" use="required"/>
-<xs:attribute name="Web" type="xs:string" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Account_group_transactions" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Account_selected" type="xs:string" use="required"/>
-<xs:attribute name="Account_show_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Account_show_name" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Account_use_selection" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Amount_currency" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Amount_exclude_null" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_currency" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_selected" type="xs:string" use="required"/>
-<xs:attribute name="Budget_show_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_show_name" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_show_sub_budget" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_show_sub_budget_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_show_without_sub_budget" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_use" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Budget_use_selection" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_currency" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_selected" type="xs:string" use="required"/>
-<xs:attribute name="Categ_show_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_show_name" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_show_sub_categ" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_show_sub_categ_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_show_without_sub_categ" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_use" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Categ_use_selection" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Currency_general" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Date_beginning" type="xs:string" use="required"/>
-<xs:attribute name="Date_end" type="xs:string" use="required"/>
-<xs:attribute name="Date_kind" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Financial_year_kind" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Financial_year_select" type="xs:string" use="required"/>
-<xs:attribute name="Financial_year_used" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="General_sort_type" type="xs:string" use="required"/>
-<xs:attribute name="Name" type="xs:string" use="required"/>
-<xs:attribute name="Nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payee_currency" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payee_selected" type="xs:string" use="required"/>
-<xs:attribute name="Payee_show_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payee_show_name" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payee_use" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payee_use_selection" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Payment_method_list" type="xs:string" use="required"/>
-<xs:attribute name="Payment_method_use" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Report_can_click" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Report_in_payees" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_columns_titles" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_exclude_split_child" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_r" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_split_amounts" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_title_column_kind" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_bank" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_budget" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_categ" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_chq" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_date" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_fin_year" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_note" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_payee" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_payment" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_reconcile" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_sort_type" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_sub_budget" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_sub_categ" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_value_date" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Show_transaction_voucher" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Split_by_date" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Split_by_fin_year" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Split_date_period" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Split_day_beginning" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Transfer_exclude_transactions" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Transfer_kind" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Transfer_selected_accounts" type="xs:string" use="required"/>
-<xs:attribute name="Use_amount" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Amount_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_1" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Last_comparison" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Link_1_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Object" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Operator" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Report_nb" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Text" type="xs:string" use="required"/>
-<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
-<xs:complexType>
-<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Amount_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_1" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Comparison_number" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Last_comparison" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Link_1_2" type="xs:NMTOKEN" use="required"/>
-<xs:attribute name="Report_nb" type="xs:NMTOKEN" use="required"/>
-</xs:complexType>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.grisbi.org" xmlns="http://www.grisbi.org"
+	elementFormDefault="qualified">
+	<xs:simpleType name="switch">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="0" />
+			<xs:enumeration value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Grisbi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="General" />
+				<xs:element minOccurs="0" ref="Color" />
+				<xs:element minOccurs="0" ref="Print" />
+				<xs:element maxOccurs="unbounded" ref="Currency" />
+				<xs:element maxOccurs="unbounded" ref="Account" />
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="Category" />
+					<xs:element ref="Sub_category" />
+					<xs:element ref="Party" />
+					<xs:element ref="Payment" />
+					<xs:element ref="Transaction" />
+					<xs:element ref="Reconcile" />
+					<xs:element ref="Scheduled" />
+					<xs:element ref="Currency_link" />
+					<xs:element ref="Budgetary" />
+					<xs:element ref="Bank" />
+					<xs:element ref="Report" />
+					<xs:element ref="Text_comparison" />
+					<xs:element ref="Amount_comparison" />
+				</xs:choice>
+				<xs:element minOccurs="0" ref="Logo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="General">
+		<xs:complexType>
+			<xs:attribute name="Add_archive_in_total_balance" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Archive_file" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Automatic_amount_separator" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_list_currency_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="CSV_separator" type="xs:string" use="required" />
+			<xs:attribute name="CSV_skipped_lines" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Category_list_currency_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Combofix_case_sensitive" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Combofix_enter_select_completion"
+				type="switch" />
+			<xs:attribute name="Combofix_force_category" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Combofix_force_payee" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Combofix_max_item" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Combofix_mixed_sort" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Crypt_file" type="switch" use="required" />
+			<xs:attribute name="File_title" type="xs:string" use="required" />
+			<xs:attribute name="File_version" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+\.\d+"></xs:pattern>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="General_address" type="xs:string"
+				use="required" />
+			<xs:attribute name="Grisbi_version" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+\.\d+-?.*"></xs:pattern>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Import_categorie_for_payee" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Import_extract_number_for_check"
+				type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Import_fusion_transactions" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Import_fyear_by_value_date" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Import_interval_search" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Metatree_sort_transactions" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="One_line_showed" type="switch"
+				use="required" />
+			<xs:attribute name="Party_list_currency_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Remind_display_per_account" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Remind_form_per_account" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Scheduler_column_width" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Scheduler_custom_menu" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Scheduler_custom_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Scheduler_view" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Second_general_address" type="xs:string"
+				use="required" />
+			<xs:attribute name="Three_lines_showed" type="switch"
+				use="required" />
+			<xs:attribute name="Transaction_column_width" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Transactions_view" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Two_lines_showed" use="required"
+				type="switch" />
+			<xs:attribute name="Use_logo" use="required" type="switch" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Logo">
+		<xs:complexType>
+			<xs:attribute name="Image" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Color">
+		<xs:complexType>
+			<xs:attribute name="Background_archive_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_archive_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_archive_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_0_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_0_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_0_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_1_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_1_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_color_1_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_scheduled_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_scheduled_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_scheduled_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_split_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_split_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Background_split_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Calendar_entry_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Calendar_entry_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Calendar_entry_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Couleur_bet_division_blue" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_division_green" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_division_red" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_future_blue" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_future_green" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_future_red" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_transfert_blue" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_transfert_green" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_bet_transfert_red" type="xs:NMTOKEN" />
+			<xs:attribute name="Couleur_jour_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Couleur_jour_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Couleur_jour_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Selection_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Selection_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Selection_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_0_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_0_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_0_red" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_1_blue" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_1_green" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Text_color_1_red" type="xs:NMTOKEN"
+				use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Print">
+		<xs:complexType>
+			<xs:attribute name="Draw_archives" use="required" type="switch" />
+			<xs:attribute name="Draw_background" use="required"
+				type="switch" />
+			<xs:attribute name="Draw_column" use="required" type="switch" />
+			<xs:attribute name="Draw_columns_name" use="required"
+				type="switch" />
+			<xs:attribute name="Draw_dates_are_value_dates" use="required"
+				type="switch" />
+			<xs:attribute name="Draw_interval_dates" use="required"
+				type="switch" />
+			<xs:attribute name="Draw_lines" use="required" type="switch" />
+			<xs:attribute name="Draw_title" use="required" type="switch" />
+			<xs:attribute name="Font_title" type="xs:string" use="required" />
+			<xs:attribute name="Font_transactions" type="xs:string"
+				use="required" />
+			<xs:attribute name="Report_font_title" type="xs:string"
+				use="required" />
+			<xs:attribute name="Report_font_transactions" type="xs:string"
+				use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Account">
+		<xs:complexType>
+			<xs:attribute name="Ascending_sort" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Bank" type="xs:int" use="required" />
+			<xs:attribute name="Bank_account_IBAN" type="xs:string"
+				use="required" />
+			<xs:attribute name="Bank_account_number" type="xs:string"
+				use="required" />
+			<xs:attribute name="Bank_branch_code" type="xs:string"
+				use="required" />
+			<xs:attribute name="Bet_Fi" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_SD" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_UT" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_auto_inc_month" type="switch" />
+			<xs:attribute name="Bet_months" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_select_futur_label" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_select_scheduled_label" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_select_transaction_label" type="xs:NMTOKEN" />
+			<xs:attribute name="Bet_start_date" type="xs:string" />
+			<xs:attribute name="Bet_use_budget" type="switch" />
+			<xs:attribute name="Closed_account" use="required" type="switch" />
+			<xs:attribute name="Column_sort" use="required" type="switch" />
+			<xs:attribute name="Comment" type="xs:string" use="required" />
+			<xs:attribute name="Currency" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Default_credit_method" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Default_debit_method" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Form_columns_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Form_columns_width" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Form_lines_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Form_organization" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Id" type="xs:string" use="required" />
+			<xs:attribute name="Initial_balance" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Key" type="xs:string" use="required" />
+			<xs:attribute name="Kind" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Lines_per_transaction" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Minimum_authorised_balance" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Minimum_wanted_balance" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Name" type="xs:string" use="required" />
+			<xs:attribute name="Neutrals_inside_method" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Number" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Owner" type="xs:string" use="required" />
+			<xs:attribute name="Owner_address" type="xs:string" use="required" />
+			<xs:attribute name="Path_icon" type="xs:string" use="required" />
+			<xs:attribute name="Show_archives_lines" type="switch" />
+			<xs:attribute name="Show_marked" use="required" type="switch" />
+			<xs:attribute name="Sort_by_method" use="required" type="switch" />
+			<xs:attribute name="Sort_order" type="xs:string" use="required" />
+			<xs:attribute name="Sorting_kind_column" type="xs:NMTOKEN"
+				use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Currency">
+		<xs:complexType>
+			<xs:attribute name="Co" type="xs:string" use="required" />
+			<xs:attribute name="Fl" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ico" type="xs:string" use="required" />
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Category">
+		<xs:complexType>
+			<xs:attribute name="Kd" use="required" type="switch" />
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Sub_category">
+		<xs:complexType>
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nbc" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Party">
+		<xs:complexType>
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Search" type="xs:string" use="required" />
+			<xs:attribute name="Txt" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Payment">
+		<xs:complexType>
+			<xs:attribute name="Account" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Automatic_number" use="required"
+				type="switch" />
+			<xs:attribute name="Current_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Name" type="xs:string" use="required" />
+			<xs:attribute name="Number" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Show_entry" use="required" type="switch" />
+			<xs:attribute name="Sign" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+						<xs:enumeration value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Transaction">
+		<xs:complexType>
+			<xs:attribute name="Ac" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Am" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ar" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Au" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ba" type="xs:string" use="required" />
+			<xs:attribute name="Br" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Bu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ca" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Cu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Dt" type="xs:string" use="required" />
+			<xs:attribute name="Dv" type="xs:string" use="required" />
+			<xs:attribute name="Exb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Exf" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Exr" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Fi" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Id" type="xs:string" use="required" />
+			<xs:attribute name="Ma" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Mo" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="No" type="xs:string" use="required" />
+			<xs:attribute name="Pa" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Pc" type="xs:string" use="required" />
+			<xs:attribute name="Pn" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Re" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Sbu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Sca" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Trt" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Vo" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Scheduled">
+		<xs:complexType>
+			<xs:attribute name="Ac" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Am" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Au" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Br" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Bu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="CPn" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ca" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Cu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Dt" type="xs:string" use="required" />
+			<xs:attribute name="Dtl" type="xs:string" use="required" />
+			<xs:attribute name="Fi" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Mo" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="No" type="xs:string" use="required" />
+			<xs:attribute name="Pa" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Pc" type="xs:string" use="required" />
+			<xs:attribute name="Pe" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Pei" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Pep" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Pn" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Sbu" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Sca" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Tra" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Currency_link">
+		<xs:complexType>
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Cu1" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Cu2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Ex" type="xs:string" use="required" />
+			<xs:attribute name="Modified_date" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Reconcile">
+		<xs:complexType>
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Acc" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Idate" type="xs:string" use="required" />
+			<xs:attribute name="Fdate" type="xs:string" use="required" />
+			<xs:attribute name="Ibal" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Fbal" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Budgetary">
+		<xs:complexType>
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Kd" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Bank">
+		<xs:complexType>
+			<xs:attribute name="Adr" type="xs:string" use="required" />
+			<xs:attribute name="BIC" type="xs:string" use="required" />
+			<xs:attribute name="Co" type="xs:string" use="required" />
+			<xs:attribute name="Faxc" type="xs:string" use="required" />
+			<xs:attribute name="Mail" type="xs:string" use="required" />
+			<xs:attribute name="Mailc" type="xs:string" use="required" />
+			<xs:attribute name="Na" type="xs:string" use="required" />
+			<xs:attribute name="Nac" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Rem" type="xs:string" use="required" />
+			<xs:attribute name="Tel" type="xs:string" use="required" />
+			<xs:attribute name="Telc" type="xs:string" use="required" />
+			<xs:attribute name="Web" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Report">
+		<xs:complexType>
+			<xs:attribute name="Account_group_transactions" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Account_selected" type="xs:string"
+				use="required" />
+			<xs:attribute name="Account_show_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Account_show_name" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Account_use_selection" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Amount_currency" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Amount_exclude_null" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_currency" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_selected" type="xs:string"
+				use="required" />
+			<xs:attribute name="Budget_show_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_show_name" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_show_sub_budget" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_show_sub_budget_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Budget_show_without_sub_budget"
+				type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Budget_use" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Budget_use_selection" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_currency" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_selected" type="xs:string"
+				use="required" />
+			<xs:attribute name="Categ_show_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_show_name" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_show_sub_categ" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_show_sub_categ_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_show_without_sub_categ" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Categ_use" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Categ_use_selection" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Currency_general" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Date_beginning" type="xs:string"
+				use="required" />
+			<xs:attribute name="Date_end" type="xs:string" use="required" />
+			<xs:attribute name="Date_kind" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Financial_year_kind" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Financial_year_select" type="xs:string"
+				use="required" />
+			<xs:attribute name="Financial_year_used" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="General_sort_type" type="xs:string"
+				use="required" />
+			<xs:attribute name="Name" type="xs:string" use="required" />
+			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Payee_currency" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Payee_selected" type="xs:string"
+				use="required" />
+			<xs:attribute name="Payee_show_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Payee_show_name" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Payee_use" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Payee_use_selection" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Payment_method_list" type="xs:string"
+				use="required" />
+			<xs:attribute name="Payment_method_use" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Report_can_click" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Report_in_payees" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_columns_titles" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_exclude_split_child" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_r" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Show_split_amounts" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_title_column_kind" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_amount" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_bank" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_budget" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_categ" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_chq" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_date" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_fin_year" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_nb" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_note" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_payee" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_payment" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_reconcile" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_sort_type" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_sub_budget" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_sub_categ" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_value_date" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Show_transaction_voucher" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Split_by_date" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Split_by_fin_year" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Split_date_period" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Split_day_beginning" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Transfer_exclude_transactions" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Transfer_kind" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Transfer_selected_accounts" type="xs:string"
+				use="required" />
+			<xs:attribute name="Use_amount" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Text_comparison">
+		<xs:complexType>
+			<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Amount_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_1" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Last_comparison" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Link_1_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Object" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Operator" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Report_nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Text" type="xs:string" use="required" />
+			<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Amount_comparison">
+		<xs:complexType>
+			<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Amount_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_1" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Comparison_number" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Last_comparison" type="xs:NMTOKEN"
+				use="required" />
+			<xs:attribute name="Link_1_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Report_nb" type="xs:NMTOKEN" use="required" />
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
