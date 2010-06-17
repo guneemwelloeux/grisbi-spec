@@ -302,10 +302,10 @@
 	<xs:element name="Currency">
 		<xs:complexType>
 			<xs:attribute name="Co" type="xs:string" use="required" />
-			<xs:attribute name="Fl" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Fl" type="xs:float" use="required" />
 			<xs:attribute name="Ico" type="xs:string" use="required" />
 			<xs:attribute name="Na" type="xs:string" use="required" />
-			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nb" type="xs:int" use="required" />
 		</xs:complexType>
 	</xs:element>
 	
@@ -331,7 +331,7 @@
 	<xs:element name="Party">
 		<xs:complexType>
 			<xs:attribute name="Na" type="xs:string" use="required" />
-			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nb" type="xs:integer" use="required" />
 			<xs:attribute name="Search" type="xs:string" use="required" />
 			<xs:attribute name="Txt" type="xs:string" use="required" />
 		</xs:complexType>
@@ -467,7 +467,7 @@
 			<xs:attribute name="Mailc" type="xs:string" use="required" />
 			<xs:attribute name="Na" type="xs:string" use="required" />
 			<xs:attribute name="Nac" type="xs:string" use="required" />
-			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Nb" type="xs:int" use="required" />
 			<xs:attribute name="Rem" type="xs:string" use="required" />
 			<xs:attribute name="Tel" type="xs:string" use="required" />
 			<xs:attribute name="Telc" type="xs:string" use="required" />
@@ -648,8 +648,8 @@
 	
 	<xs:element name="Amount_comparison">
 		<xs:complexType>
-			<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required" />
-			<xs:attribute name="Amount_2" type="xs:NMTOKEN" use="required" />
+			<xs:attribute name="Amount_1" type="xs:float" use="required" />
+			<xs:attribute name="Amount_2" type="xs:float" use="required" />
 			<xs:attribute name="Comparison_1" type="xs:NMTOKEN" use="required" />
 			<xs:attribute name="Comparison_2" type="xs:NMTOKEN" use="required" />
 			<xs:attribute name="Comparison_number" type="xs:NMTOKEN"
