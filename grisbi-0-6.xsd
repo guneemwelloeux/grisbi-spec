@@ -57,7 +57,7 @@
 			<xs:attribute name="Combofix_case_sensitive" type="xs:NMTOKEN"
 				use="required" />
 			<xs:attribute name="Combofix_enter_select_completion"
-				type="switch" />
+				type="xs:boolean" />
 			<xs:attribute name="Combofix_force_category" type="xs:NMTOKEN"
 				use="required" />
 			<xs:attribute name="Combofix_force_payee" type="xs:NMTOKEN"
@@ -66,7 +66,7 @@
 				use="required" />
 			<xs:attribute name="Combofix_mixed_sort" type="xs:NMTOKEN"
 				use="required" />
-			<xs:attribute name="Crypt_file" type="switch" use="required" />
+			<xs:attribute name="Crypt_file" type="xs:boolean" use="required" />
 			<xs:attribute name="File_title" type="xs:string" use="required" />
 			<xs:attribute name="File_version" use="required">
 				<xs:simpleType>
@@ -96,7 +96,7 @@
 				use="required" />
 			<xs:attribute name="Metatree_sort_transactions" type="xs:NMTOKEN"
 				use="required" />
-			<xs:attribute name="One_line_showed" type="switch"
+			<xs:attribute name="One_line_showed" type="xs:boolean"
 				use="required" />
 			<xs:attribute name="Party_list_currency_number" type="xs:NMTOKEN"
 				use="required" />
@@ -114,15 +114,15 @@
 				use="required" />
 			<xs:attribute name="Second_general_address" type="xs:string"
 				use="required" />
-			<xs:attribute name="Three_lines_showed" type="switch"
+			<xs:attribute name="Three_lines_showed" type="xs:boolean"
 				use="required" />
 			<xs:attribute name="Transaction_column_width" type="xs:NMTOKEN"
 				use="required" />
 			<xs:attribute name="Transactions_view" type="xs:NMTOKEN"
 				use="required" />
 			<xs:attribute name="Two_lines_showed" use="required"
-				type="switch" />
-			<xs:attribute name="Use_logo" use="required" type="switch" />
+				type="xs:boolean" />
+			<xs:attribute name="Use_logo" use="required" type="xs:boolean" />
 		</xs:complexType>
 	</xs:element>
 	
