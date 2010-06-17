@@ -2,12 +2,15 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.grisbi.org" xmlns="http://www.grisbi.org"
 	elementFormDefault="qualified">
+	
 	<xs:simpleType name="switch">
 		<xs:restriction base="xs:integer">
 			<xs:enumeration value="0" />
 			<xs:enumeration value="1" />
 		</xs:restriction>
 	</xs:simpleType>
+	
+	
 	<xs:element name="Grisbi">
 		<xs:complexType>
 			<xs:sequence>
@@ -35,6 +38,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
 
 	<xs:element name="General">
 		<xs:complexType>
@@ -121,11 +125,15 @@
 			<xs:attribute name="Use_logo" use="required" type="switch" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Logo">
 		<xs:complexType>
 			<xs:attribute name="Image" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Color">
 		<xs:complexType>
 			<xs:attribute name="Background_archive_blue" type="xs:NMTOKEN"
@@ -199,6 +207,8 @@
 				use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Print">
 		<xs:complexType>
 			<xs:attribute name="Draw_archives" use="required" type="switch" />
@@ -222,6 +232,8 @@
 				use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Account">
 		<xs:complexType>
 			<xs:attribute name="Ascending_sort" type="xs:NMTOKEN"
@@ -285,6 +297,8 @@
 				use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Currency">
 		<xs:complexType>
 			<xs:attribute name="Co" type="xs:string" use="required" />
@@ -294,6 +308,8 @@
 			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Category">
 		<xs:complexType>
 			<xs:attribute name="Kd" use="required" type="switch" />
@@ -301,6 +317,8 @@
 			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Sub_category">
 		<xs:complexType>
 			<xs:attribute name="Na" type="xs:string" use="required" />
@@ -308,6 +326,8 @@
 			<xs:attribute name="Nbc" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Party">
 		<xs:complexType>
 			<xs:attribute name="Na" type="xs:string" use="required" />
@@ -316,6 +336,8 @@
 			<xs:attribute name="Txt" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Payment">
 		<xs:complexType>
 			<xs:attribute name="Account" type="xs:NMTOKEN" use="required" />
@@ -337,6 +359,8 @@
 			</xs:attribute>
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Transaction">
 		<xs:complexType>
 			<xs:attribute name="Ac" type="xs:NMTOKEN" use="required" />
@@ -369,6 +393,8 @@
 			<xs:attribute name="Vo" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Scheduled">
 		<xs:complexType>
 			<xs:attribute name="Ac" type="xs:NMTOKEN" use="required" />
@@ -396,6 +422,8 @@
 			<xs:attribute name="Tra" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Currency_link">
 		<xs:complexType>
 			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
@@ -405,6 +433,8 @@
 			<xs:attribute name="Modified_date" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Reconcile">
 		<xs:complexType>
 			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
@@ -416,6 +446,8 @@
 			<xs:attribute name="Fbal" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Budgetary">
 		<xs:complexType>
 			<xs:attribute name="Nb" type="xs:NMTOKEN" use="required" />
@@ -423,6 +455,8 @@
 			<xs:attribute name="Kd" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Bank">
 		<xs:complexType>
 			<xs:attribute name="Adr" type="xs:string" use="required" />
@@ -440,6 +474,8 @@
 			<xs:attribute name="Web" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Report">
 		<xs:complexType>
 			<xs:attribute name="Account_group_transactions" type="xs:NMTOKEN"
@@ -588,6 +624,8 @@
 			<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Text_comparison">
 		<xs:complexType>
 			<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required" />
@@ -606,6 +644,8 @@
 			<xs:attribute name="Use_text" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	
 	<xs:element name="Amount_comparison">
 		<xs:complexType>
 			<xs:attribute name="Amount_1" type="xs:NMTOKEN" use="required" />
@@ -620,4 +660,5 @@
 			<xs:attribute name="Report_nb" type="xs:NMTOKEN" use="required" />
 		</xs:complexType>
 	</xs:element>
+
 </xs:schema>
